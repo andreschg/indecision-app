@@ -5,16 +5,9 @@ import Header from './Header';
 import Options from './Options';
 
 export default class IndecisionApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      options: []
-    }
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
-  }
+  state = {
+    options: []
+  };
 
   componentDidMount() {
     console.log('component did mount');
@@ -42,24 +35,24 @@ export default class IndecisionApp extends React.Component {
     console.log('component will unmount');
   }
 
-  handleDeleteOptions() {
+  handleDeleteOptions = () => {
     this.setState(() => ({
       options: []
     }));
   }
 
-  handlePick() {
+  handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     alert(this.state.options[randomNum]);
   }
 
-  handleDeleteOption(optionToRemove) {
+  handleDeleteOption = (optionToRemove) => {
     this.setState(({ options }) => ({
       options: options.filter(option => option !== optionToRemove)
     }));
   }
 
-  handleAddOption(option) {
+  handleAddOption = (option) => {
     if (!option) {
       return 'enter a value';
     } else if (this.state.options.indexOf(option) > -1) {
