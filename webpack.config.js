@@ -28,7 +28,6 @@ module.exports = () => {
               loader: 'sass-loader',
               options: {
                 sourceMap: true,
-                includePaths: [path.join(__dirname, 'node_modules', 'bootstrap-sass', 'assets', 'stylesheet')]
               }
             }
         ]
