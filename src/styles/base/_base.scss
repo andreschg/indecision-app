@@ -4,4 +4,14 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
+  background-color: $dark-blue;
 }
+
+button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
